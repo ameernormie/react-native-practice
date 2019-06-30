@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, TextInput, StyleSheet, Button } from "react-native";
 import { Formik } from "formik";
+import LoginForm from "./LoginForm";
 
 const validate = (values: { email: string; password: string }, props: any) => {
   let errors = { email: "", password: "" };
@@ -19,52 +20,7 @@ class LoginScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View
-          style={{
-            alignSelf: "stretch",
-            minHeight: 200,
-            marginHorizontal: 20
-          }}
-        >
-          <Formik
-            initialValues={{ email: "", password: "" }}
-            onSubmit={values => console.log(values)}
-            validate={validate}
-          >
-            {props => {
-              console.log("props ", props);
-              return (
-                <View>
-                  <TextInput
-                    onChangeText={props.handleChange("email")}
-                    onBlur={props.handleBlur("email")}
-                    value={props.values.email}
-                    style={{
-                      backgroundColor: "grey",
-                      height: 50,
-                      marginBottom: 5,
-                      paddingHorizontal: 10,
-                      borderRadius: 5
-                    }}
-                  />
-                  <TextInput
-                    onChangeText={props.handleChange("password")}
-                    onBlur={props.handleBlur("password")}
-                    value={props.values.password}
-                    style={{
-                      backgroundColor: "grey",
-                      height: 50,
-                      marginBottom: 5,
-                      paddingHorizontal: 10,
-                      borderRadius: 5
-                    }}
-                  />
-                  <Button onPress={props.handleSubmit} title="Submit" />
-                </View>
-              );
-            }}
-          </Formik>
-        </View>
+        <LoginForm />
       </View>
     );
   }
