@@ -11,7 +11,6 @@ const validate = (values: { email: string; password: string }, props: any) => {
   if (!values.password) {
     errors.password = "Password required";
   }
-  console.log("values and props in validate ", values, props);
 
   return errors;
 };
