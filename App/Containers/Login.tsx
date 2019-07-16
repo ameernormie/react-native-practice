@@ -16,10 +16,14 @@ const validate = (values: { email: string; password: string }, props: any) => {
 };
 
 class LoginScreen extends Component {
+  handleSubmit = () => {
+    this.props.navigation.navigate("VideoStream");
+  };
+
   render() {
     return (
       <View style={styles.container}>
-        <LoginForm />
+        <LoginForm handleSubmit={this.handleSubmit} />
       </View>
     );
   }

@@ -53,7 +53,7 @@ class LoginForm extends Component {
                     borderRadius: 5
                   }}
                 />
-                <Button onPress={props.handleSubmit} title="Submit" />
+                <Button onPress={this.props.handleSubmit} title="Submit" />
               </View>
             );
           }}
