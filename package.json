@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug"
   },
   "husky": {
     "hooks": {
@@ -15,6 +16,7 @@
     "formik": "^1.5.7",
     "react": "16.8.3",
     "react-native": "0.59.9",
+    "react-native-navigation": "^2.22.3",
     "yup": "^0.27.0"
   },
   "devDependencies": {
